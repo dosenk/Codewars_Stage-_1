@@ -1,11 +1,7 @@
 function findDup(arr){
-    arr.sort(function(a, b) { return a - b; });
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] == arr[i+1]) {
-            return arr[i];
-        }
-        
-    }
-}
+    console.log(arr.reduce(function(n, v, i){
+      return arr.lastIndexOf(v) == i ? n : v;
+    }, null));
+  }
 
-findDup(arr);
+findDup([2,6,8,3,4,5,9,2]);
